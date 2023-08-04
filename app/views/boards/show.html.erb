@@ -26,10 +26,8 @@
     <input id="expires_on_field" type="date" name="expires_on">
   </div>
 
-  <div>
-    <label for="board_id_field">Board ID</label>
-    <input id="board_id_field" type="text" name="expires_on">
-  </div>
+ 
+  <input id="board_id_field" type="hidden" name="expires_on" value="<%= @the_board.id %>">
 
   <button>
     Add post
