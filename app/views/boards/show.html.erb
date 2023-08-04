@@ -17,17 +17,17 @@
   </div>
 
   <div>
-    <label for="body_field">Title</label>
+    <label for="body_field">Body</label>
     <textarea name="body" id="body_field" cols="30" rows="3"></textarea>
   </div>
 
   <div>
-    <label for="expires_on_field">Title</label>
+    <label for="expires_on_field">Expires on</label>
     <input id="expires_on_field" type="date" name="expires_on">
   </div>
 
  
-  <input id="board_id_field" type="hidden" name="expires_on" value="<%= @the_board.id %>">
+  <input id="board_id_field" type="hidden" name="board_id" value="<%= @the_board.id %>">
 
   <button>
     Add post
@@ -36,8 +36,10 @@
 </form>
 
 <hr>
-<% matching_posts = Post.where({ board_id: @the_board.id }).order({expires_on: :asc})%>
 <h2>Active posts</h2>
+
+
+<% matching_posts = Post.where({ board_id: @the_board.id }).order({expires_on: :asc})%>
 
 <table border="1">
   <tr>
